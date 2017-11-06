@@ -112,11 +112,11 @@ for (i, c) in enumerate(cnts):
 		data.append(ocr)
 
 		# display the change
-		# print x, y, w, h, '\n'
-		# cv2.rectangle(image, (x, y), (x + w, y + h), (255, 255, 255), 2)
-		# cv2.putText(image, ocr, (x+w+10, y+h), cv2.FONT_HERSHEY_SIMPLEX, 0.55, (0, 0, 255), 2)
-		# cv2.imshow("img", image)
-		# cv2.waitKey(0)   
+		print x, y, w, h, '\n'
+		cv2.rectangle(image, (x, y), (x + w, y + h), (255, 255, 255), 2)
+		cv2.putText(image, ocr, (x+w+10, y+h), cv2.FONT_HERSHEY_SIMPLEX, 0.55, (0, 0, 255), 2)
+		cv2.imshow("img", image)
+		cv2.waitKey(0)   
 
 # optional, to pring data in terminal 
 data_npm = ["NPM", "NAMA", "FAKULTAS", "JURUSAN"]
