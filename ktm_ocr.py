@@ -24,23 +24,23 @@ image = cv2.imread(args["image"])
 image = imutils.resize(image, width=500, height=100)
 
 # test original output
-# cv2.imshow("Original output", image)
-# cv2.waitKey(0)
+cv2.imshow("Original output", image)
+cv2.waitKey(0)
 
 # change color to gray
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 # test gray output
-# cv2.imshow("Gray output", gray)
-# cv2.waitKey(0)
+cv2.imshow("Gray output", gray)
+cv2.waitKey(0)
 
 # apply a tophat (whitehat) morphological operator to find light
 # regions against a dark background 
 tophat = cv2.morphologyEx(gray, cv2.MORPH_TOPHAT, rectKernel)
 
 # test tophat output
-# cv2.imshow("Tophat output", tophat)
-# cv2.waitKey(0)
+cv2.imshow("Tophat output", tophat)
+cv2.waitKey(0)
 
 # compute the Scharr gradient of the tophat image, then scale
 # the rest back into the range [0, 255]
@@ -51,31 +51,31 @@ gradX = (255 * ((gradX - minVal) / (maxVal - minVal)))
 gradX = gradX.astype("uint8")
 
 # test gradX output
-# cv2.imshow("GradX output", gradX)
-# cv2.waitKey(0)
+cv2.imshow("GradX output", gradX)
+cv2.waitKey(0)
 
 # apply a closing operation using the rectangular kernel to help
 # cloes gaps in between data
 gradX = cv2.morphologyEx(gradX, cv2.MORPH_CLOSE, rectKernel)
 
 # test gradX output
-# cv2.imshow("GradX output", gradX)
-# cv2.waitKey(0)
+cv2.imshow("GradX output", gradX)
+cv2.waitKey(0)
 
 # then apply Otsu's thresholding method to binarize the image
 thresh = cv2.threshold(gradX, 0, 255,cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]
 
 # test thresh output
-# cv2.imshow("Thresh output", thresh)
-# cv2.waitKey(0)
+cv2.imshow("Thresh output", thresh)
+cv2.waitKey(0)
 
 # apply a second closing operation to the binary image, again
 # to help close gaps between ktm data regions
 thresh = cv2.morphologyEx(thresh, cv2.MORPH_CLOSE, sqKernel)
 
 # test thresh output
-# cv2.imshow("Thresh output", thresh)
-# cv2.waitKey(0)
+cv2.imshow("Thresh output", thresh)
+cv2.waitKey(0)
 
 # find contours in the thresholded image, then initialize the
 # list of digit locations
