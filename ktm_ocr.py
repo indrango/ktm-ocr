@@ -84,7 +84,8 @@ cnts = cnts[0] if imutils.is_cv2() else cnts[1]
 data = []
 
 # loop over the contours
-for (i, c) in enumerate(cnts):
+cnts_rev = list(reversed(cnts))
+for (i, c) in enumerate(cnts_rev):
 	(x, y, w, h) = cv2.boundingRect(c)
 	x = x - 5
 	y = y - 5
