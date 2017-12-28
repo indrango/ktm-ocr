@@ -20,3 +20,13 @@ NPM         : (NPM)
 NAMA        : (NAMA)
 JURUSAN     : (JURUSAN)
 FAKULTAS    : (FAKULTAS)# KTM OCR
+
+# HOW TO USE THIS PROGRAM
+* Install anaconda for package manager
+* Install opencv for image processing
+* Install other depedencies
+
+* Running this program
+python ktm_ocr.py -i "nama file image"
+
+
